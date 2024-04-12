@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3383224,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Records</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body>
+    <div id="navbarBasicExample" class="navbar-menu">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <ul>
+            <a href= "/">Home</a>
+            <a href = "/liststudents">Show all Students</a>
+            <a href = "/enternew">Add new student</a>
+            <a href = "{{ url_for('login') }}">Login</a>
+            <a href = "{{ url_for('logout') }}">Login</a>
+            <a href = "{{ url_for('register') }}">Register</a>
+        </ul>
+    </nav>
+    </div>
+    <section class="content">
+        <header>
+          {% block header %}{% endblock %}
+        </header>
+        {% for message in get_flashed_messages() %}
+          <div class="flash">{{ message }}</div>
+        {% endfor %}
+        {% block content %}{% endblock %}
+      </section>
+  </body>
+</html>

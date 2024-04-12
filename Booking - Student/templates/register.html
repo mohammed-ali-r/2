@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Register{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post" action="/register">
+    <input type="text" name="name" placeholder="Your Name" autofocus="" required>
+    <input type="tel" name="Phone" placeholder="Your Phone Number" autofocus="" required>
+    <input type="email" name="email" placeholder="Your Email" autofocus="" required>
+    <input type="password" name="password" placeholder="Your Password" required>
+    <button class="button">Register</button>
+  </form>
+{% endblock %}

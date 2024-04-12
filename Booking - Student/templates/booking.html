@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1>{% block title %}Bookings{% endblock %}</h1>
+{% endblock %} 
+<br>
+<div>
+  {% with messages = get_flashed_messages() %}
+{% if messages %}
+  <ul class=flashes>
+  {% for message in messages %}
+    {{ message }}
+  {% endfor %}
+  </ul>
+{% endif %}
+{% endwith %}
+</div>
+
+  {% block content %}
+  <div>
+    <p> Reserve Tickets</p>
+    <form method="POST" action="/book">
+                
+                <input type="date" name="dateChosen" placeholder="Choose A date">
+                <input type="number" name="numTickets" placeholder="number of tickets">
+        <button class="button">Book</button>
+    </form>
+</div>
+  {% endblock %}
